@@ -1,0 +1,86 @@
+/* ==========================================================
+   Cisco.css — styles specific to the Oracle page
+   Sections: 1 Hero · 2 Course grid · 3 CTA · 4 Responsive (service chips are part of the hero photo)
+   ========================================================== */
+
+/* Page accent: Cisco blue is the shared blue; a soft blue wash replaces the page tint */
+.cs-hero { background: linear-gradient(180deg, #f1f7ff, #fff); }
+
+/* 1. Hero (the service chips are part of the hero photo) */
+.cs-hero { background: linear-gradient(180deg, #f6f9ff, #fff); overflow: hidden; }
+.cs-hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 40px; padding: 56px 0 48px; }
+.cs-hero__content { display: grid; gap: 20px; justify-items: start; }
+.cs-hero__logo { height: 96px; width: auto; }
+.cs-hero__actions { display: flex; flex-wrap: wrap; gap: 16px; }
+.cs-hero__visual { position: relative; display: grid; place-items: center; animation: art-in .8s var(--ease-spring) both .1s; }
+.hero-art { width: 100%; max-width: 560px; height: auto; animation: float 7s ease-in-out infinite; mix-blend-mode: multiply; }
+.glow { position: absolute; width: 70%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(10, 155, 240, .22), rgba(27, 42, 65, .1) 55%, transparent 70%); animation: pulse 4.5s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-14px); } }
+@keyframes pulse { 50% { transform: scale(1.18); opacity: .6; } }
+.cs-hero__content > * { animation: rise .8s var(--ease-spring) both; }
+.cs-hero__content > :nth-child(2) { animation-delay: .1s; }
+.cs-hero__content > :nth-child(3) { animation-delay: .18s; }
+.cs-hero__content > :nth-child(4) { animation-delay: .26s; }
+.cs-hero__content > :nth-child(5) { animation-delay: .34s; }
+@media (prefers-reduced-motion: reduce) { .cs-hero__visual, .hero-art, .glow, .cs-hero__content > * { animation: none; } }
+
+/* 3. Course grid — two staggered columns, numbers on the outer edges */
+.courses .lead { margin-top: 16px; }
+.cs-grid {
+  list-style: none; margin: 56px 0 0; padding: 0 0 44px; position: relative;
+  display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; row-gap: 26px;
+}
+.cs-grid::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dashed #bcd3f0; }
+.cs-item { --num: #0a9bf0; position: relative; display: grid; align-items: center; gap: 0; }
+.cs-item--left  { grid-template-columns: 72px minmax(0, 1fr); }
+.cs-item--right { grid-template-columns: minmax(0, 1fr) 72px; margin-top: 44px; margin-bottom: -44px; }
+.cs-item:nth-child(even) { --num: #0b1b4d; }
+.cs-item__num {
+  position: relative; z-index: 1; width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 1.7rem; font-weight: 800; color: #fff; background: var(--num); box-shadow: 0 8px 20px rgba(11, 27, 77, .22);
+}
+.cs-item--left .cs-item__num  { margin-right: -22px; }
+.cs-item--right .cs-item__num { margin-left: -22px; grid-column: 2; grid-row: 1; }
+.cs-item--right .cs-item__card { grid-column: 1; grid-row: 1; }
+.cs-item__card {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 130px;
+  padding: 18px 22px 18px 38px; background: linear-gradient(180deg, #fff, #f1f7ff);
+  border: 1px solid var(--line); border-radius: 36px; box-shadow: var(--card-shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.cs-item--right .cs-item__card { padding: 18px 38px 18px 26px; }
+.cs-item:hover .cs-item__card { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(11, 27, 77, .12); }
+.cs-item__card h3 { color: #0a6fd6; font-size: 1.1rem; line-height: 1.25; margin-bottom: 6px; text-wrap: balance; }
+.cs-item__card p { font-size: .86rem; line-height: 1.5; }
+.cs-item__icon { width: 60px; height: 60px; flex: none; }
+.cs-item__icon img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform .3s var(--ease-spring); }
+.cs-item:hover .cs-item__icon img { transform: scale(1.1) rotate(-4deg); }
+
+/* 4. CTA */
+.courses__cta { display: flex; justify-content: center; margin-top: 36px; }
+
+/* 5. Responsive */
+@media (max-width: 900px) {
+  .cs-hero__inner { grid-template-columns: minmax(0, 1fr); }
+  .cs-hero__visual { height: auto; }
+  .cs-grid { grid-template-columns: minmax(0, 1fr); padding-bottom: 0; }
+  .cs-grid::before { display: none; }
+  .cs-item--right { margin-top: 0; margin-bottom: 0; }
+}
+@media (max-width: 560px) {
+  .cs-item--left, .cs-item--right { grid-template-columns: 56px minmax(0, 1fr); }
+  .cs-item--right .cs-item__num { grid-column: 1; margin-left: 0; margin-right: -18px; }
+  .cs-item--right .cs-item__card { grid-column: 2; padding: 16px 16px 16px 30px; }
+  .cs-item__num { width: 56px; height: 56px; font-size: 1.3rem; }
+  .cs-item--left .cs-item__num { margin-right: -18px; }
+  .cs-item__card { padding: 16px 16px 16px 30px; border-radius: 28px; }
+  .cs-item__icon { display: none; }
+}
+@media (max-width: 480px) {
+  .cs-hero__inner { padding: 32px 0; gap: 28px; }
+  .cs-hero__logo { height: 72px; }
+  .cs-hero__actions { width: 100%; flex-direction: column; }
+  .cs-hero__actions .btn, .courses__cta .btn { width: 100%; }
+  .cs-item__card h3 { font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { .cs-item__icon img { transition: none; } }

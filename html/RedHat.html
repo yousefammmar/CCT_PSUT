@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red Hat Courses &amp; Learning Path | PSUT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/Shared_Style.css">
+  <link rel="stylesheet" href="../css/RedHat.css">
+</head>
+<body>
+
+  <!-- ===== Header (logo links back home) ===== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="Back to home">
+        <div class="brand__title">Center of Consultation and Training</div>
+        <div class="brand__tagline">LEARN · CERTIFY · GROW</div>
+      </a>
+      <img class="university-logo" src="../assets/images/psut-logo.webp" alt="Princess Sumaya University for Technology" width="1600" height="483">
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="rh-hero" id="hero">
+    <div class="container rh-hero__inner">
+      <div class="rh-hero__content">
+        <img class="rh-hero__logo" src="../assets/images/redhat.svg" alt="Red Hat logo">
+        <h1 class="heading">Red Hat Courses &amp; <em>Learning Path</em></h1>
+        <p class="lead">Red Hat provides industry-leading open source technologies and training in Linux, automation, containers, cloud, and application development, empowering organizations to build, innovate, and grow.</p>
+        <p class="lead">Our Red Hat training helps learners build practical skills, prepare for industry-recognized certifications, and advance their career opportunities with real-world enterprise technologies.</p>
+        <div class="rh-hero__actions">
+          <button class="btn btn--primary" data-scroll-target="#courses">Explore Red Hat Courses <span aria-hidden="true">→</span></button>
+          <button class="btn btn--outline" data-scroll-target="#courses">View Red Hat Certifications</button>
+        </div>
+      </div>
+      <div class="rh-hero__visual" data-tilt>
+        <div class="glow" aria-hidden="true"></div>
+        <img class="hero-art" src="../assets/images/redhat-hero.jpg" alt="Red Hat office building and cloud with Linux, Automation, OpenShift, Containers, Cloud, Java and Python" width="944" height="986">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Courses / learning path ===== -->
+  <section class="section courses" id="courses">
+    <div class="container">
+      <div class="eyebrow">Your Red Hat learning journey</div>
+      <h2 class="heading">Build Your Skills <em>with Red Hat</em></h2>
+      <p class="lead">Follow a structured learning path designed to take you from foundational concepts to advanced skills with hands-on training and real-world applications.</p>
+      <ol class="path" id="course-path"></ol>
+      <ul class="features" id="features"></ul>
+      <div class="courses__cta">
+        <a class="btn btn--primary" id="enroll-btn" href="#">Enroll Now <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/Shared_Script.js"></script>
+  <script src="../js/RedHat.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* ==========================================================
+   Microsoft.css — styles specific to the Microsoft page
+   Sections: 1 Hero · 2 Course cards · 3 CTA · 4 Responsive
+   ========================================================== */
+
+/* 1. Hero */
+.ms-hero { background: linear-gradient(180deg, #f6f9ff, #fff); overflow: hidden; }
+.ms-hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 40px; padding: 56px 0 48px; }
+.ms-hero__content { display: grid; gap: 22px; justify-items: start; }
+.ms-hero__logo { height: 72px; width: auto; }
+.ms-hero__media {
+  height: 440px; border-radius: 50% 0 0 50% / 60% 0 0 60%; overflow: hidden; box-shadow: var(--card-shadow);
+  animation: reveal-media 1s var(--ease-spring) both;
+}
+.ms-hero__media img { width: 100%; height: 100%; object-fit: cover; animation: settle 1.6s var(--ease-spring) both; }
+.ms-hero__content > * { animation: rise .8s var(--ease-spring) both; }
+.ms-hero__content > :nth-child(2) { animation-delay: .1s; }
+.ms-hero__content > :nth-child(3) { animation-delay: .18s; }
+.ms-hero__content > :nth-child(4) { animation-delay: .26s; }
+
+/* 2. Course cards — two staggered columns of colour-coded pills */
+.courses .lead { margin-top: 16px; }
+.ms-grid {
+  --c1: #0a6f86; --c2: #14a3b8;
+  list-style: none; margin: 56px 0 0; padding: 0 0 44px;
+  display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; row-gap: 26px;
+}
+.ms-card {
+  display: grid; align-items: center; gap: 18px; min-height: 150px; padding: 18px 22px; color: #fff;
+  background: linear-gradient(120deg, var(--c1), var(--c2));
+  box-shadow: 0 12px 28px rgba(11, 27, 77, .16);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.ms-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(11, 27, 77, .22); }
+.ms-card--left  { grid-template-columns: 64px 1fr 112px; border-radius: 80px 36px 36px 80px; }
+.ms-card--right { grid-template-columns: 112px 1fr 64px; border-radius: 36px 80px 80px 36px; margin-top: 44px; margin-bottom: -44px; }
+.ms-card--right .ms-card__badge { grid-column: 1; grid-row: 1; }
+.ms-card--right .ms-card__text  { grid-column: 2; grid-row: 1; }
+.ms-card--right .ms-card__num   { grid-column: 3; grid-row: 1; }
+.ms-card__num {
+  width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 1.5rem; font-weight: 800; background: rgba(0, 0, 0, .22); box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .85);
+}
+.ms-card__text h3 { font-size: 1.1rem; line-height: 1.25; margin-bottom: 6px; text-wrap: balance; }
+.ms-card__text p { font-size: .86rem; line-height: 1.5; opacity: .95; }
+.ms-card__badge { width: 112px; height: 112px; border-radius: 50%; background: #fff; display: grid; place-items: center; padding: 8px; box-shadow: 0 6px 16px rgba(0, 0, 0, .2); transition: transform .3s var(--ease-spring); }
+.ms-card:hover .ms-card__badge { transform: scale(1.08) rotate(-3deg); }
+.badge-art { width: 100%; height: 100%; object-fit: contain; }
+
+/* Colour themes (white text kept ≥ 4.5:1 against the darker end of each gradient) */
+.ms-card--teal   { --c1: #0a6f86; --c2: #139bb0; }
+.ms-card--blue   { --c1: #0b4fb3; --c2: #1f7fe0; }
+.ms-card--purple { --c1: #5b2aa8; --c2: #8a43d4; }
+.ms-card--orange { --c1: #b8400a; --c2: #d9600f; }
+.ms-card--green  { --c1: #17703a; --c2: #2a9a4f; }
+
+/* 3. CTA */
+.courses__cta { display: flex; justify-content: center; margin-top: 40px; }
+
+/* 4. Responsive */
+@media (max-width: 900px) {
+  .ms-hero__inner { grid-template-columns: minmax(0, 1fr); padding-top: 40px; }
+  .ms-hero__media { height: 300px; border-radius: var(--radius); }
+  .ms-grid { grid-template-columns: minmax(0, 1fr); padding-bottom: 0; }
+  .ms-card--right { margin-top: 0; margin-bottom: 0; }
+}
+@media (max-width: 560px) {
+  .ms-card--left, .ms-card--right { grid-template-columns: 52px minmax(0, 1fr) 76px; border-radius: 48px 24px 24px 48px; padding: 16px 14px; gap: 12px; }
+  .ms-card--right .ms-card__badge, .ms-card--right .ms-card__text, .ms-card--right .ms-card__num { grid-column: auto; grid-row: auto; }
+  .ms-card--right .ms-card__num { order: -1; }
+  .ms-card--right .ms-card__badge { order: 3; }
+  .ms-card__num { width: 52px; height: 52px; font-size: 1.2rem; }
+  .ms-card__badge { width: 76px; height: 76px; padding: 7px; }
+}
+@media (max-width: 480px) {
+  .ms-hero__inner { padding: 32px 0 24px; gap: 28px; }
+  .ms-hero__logo { height: 52px; }
+  .ms-hero__content .btn, .courses__cta .btn { width: 100%; }
+  .ms-hero__media { height: 220px; }
+  .ms-grid { margin-top: 36px; }
+  /* number + badge on one row, text full width below */
+  .ms-card--left, .ms-card--right { grid-template-columns: 48px 1fr 72px; grid-template-areas: "num . badge" "text text text"; border-radius: 36px 20px 20px 36px; }
+  .ms-card__num   { grid-area: num !important; width: 48px; height: 48px; }
+  .ms-card__badge { grid-area: badge !important; width: 72px; height: 72px; justify-self: end; }
+  .ms-card__text  { grid-area: text !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-hero__media, .ms-hero__media img, .ms-hero__content > * { animation: none; }
+}
