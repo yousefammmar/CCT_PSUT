@@ -1,0 +1,167 @@
+/* ==========================================================
+   Shared_Style.css — styles used by every page
+   Sections: 1 Tokens · 2 Reset · 3 Layout · 4 Header
+             5 Buttons · 6 Section headings · 7 Footer strip · 8 Reveal
+   ========================================================== */
+
+/* 1. Tokens */
+:root {
+  --navy: #0b1b4d;
+  --blue: #0a5cff;
+  --blue-dark: #0646c8;
+  --blue-soft: #eaf2ff;
+  --orange: #ff9900;
+  --text: #4a5578;
+  --line: #e4eaf6;
+  --bg: #ffffff;
+  --card-shadow: 0 8px 28px rgba(11, 27, 77, 0.07);
+  --radius: 20px;
+  --header-h: 84px;
+  --max-w: 1180px;
+  /* motion */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 2. Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+.container > *, .hero__inner > *, .aws-hero__inner > * { min-width: 0; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, p { margin: 0; }
+
+/* 3. Layout */
+.container { width: min(var(--max-w), 100% - 40px); margin-inline: auto; }
+.section { padding: 72px 0; scroll-margin-top: var(--header-h); }
+
+/* 4. Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header__inner {
+  height: var(--header-h);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.brand__title { font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; line-height: 1.1; }
+.brand__tagline { font-size: 0.7rem; letter-spacing: 0.4em; color: #5a6585; margin-top: 6px; }
+.university-logo { height: 60px; width: auto; flex: none; }
+
+/* 5. Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 32px; border-radius: 14px;
+  font-family: inherit; font-size: 1rem; font-weight: 600; line-height: 1; cursor: pointer;
+  border: 1.5px solid var(--blue);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:focus-visible, .provider-card__arrow:focus-visible, .brand:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+::selection { background: var(--blue); color: #fff; }
+.btn--primary { background: linear-gradient(135deg, #0a5cff, #0646c8); color: #fff; box-shadow: 0 10px 24px rgba(10, 92, 255, .3); }
+.btn--outline { background: #fff; color: var(--blue); }
+.btn--outline:hover { background: var(--blue-soft); }
+
+/* 6. Section headings */
+.eyebrow { margin-bottom: 14px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--blue); }
+.heading { font-size: clamp(2rem, 4.5vw, 3.3rem); font-weight: 800; color: var(--navy); letter-spacing: -0.03em; line-height: 1.12; text-wrap: balance; }
+.heading em { font-style: normal; color: var(--blue); }
+.lead { font-size: 1.05rem; max-width: 62ch; text-wrap: pretty; }
+
+/* 7. Footer strip */
+.footer-strip { background: var(--blue-soft); border-top: 1px solid var(--line); }
+.footer-strip__inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 22px 0; }
+.footer-strip__item { display: flex; align-items: center; gap: 14px; }
+.footer-strip__item svg { width: 34px; height: 34px; flex: none; color: var(--blue); }
+.footer-strip__item strong { display: block; color: var(--navy); font-size: 0.9rem; }
+.footer-strip__item span { font-size: 0.78rem; }
+
+/* 7b. Feature strip (four selling points above the Enroll button on provider pages) */
+.features { list-style: none; margin: 48px 0 0; padding: 22px 26px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; background: linear-gradient(180deg, #fff, #eef5ff); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--card-shadow); }
+.feature { display: flex; align-items: center; gap: 14px; }
+.feature__icon { width: 46px; height: 46px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; flex: none; }
+.feature__icon svg { width: 24px; height: 24px; }
+.feature strong { display: block; color: var(--navy); font-size: .88rem; line-height: 1.25; }
+.feature span { display: block; font-size: .78rem; line-height: 1.35; }
+@media (max-width: 1000px) { .features { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .features { grid-template-columns: minmax(0, 1fr); padding: 20px; } }
+
+/* 8a. Pointer tilt (driven by Shared.initTilt) */
+[data-tilt] { --rx: 0deg; --ry: 0deg; transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .25s cubic-bezier(.2, .7, .2, 1); }
+
+/* 8. Motion — scroll reveal, badge pop, drawn connector, hero entrances
+   Individual `translate` / `scale` properties are used for the entrance so a card's own
+   hover `transform` never fights with it. Delays are per-property so hover stays instant. */
+.reveal {
+  --d: 0ms;
+  opacity: 0; translate: 0 36px; scale: .96;
+}
+.reveal--left  { translate: -48px 24px; }
+.reveal--right { translate: 48px 24px; }
+.reveal.reveal { /* beats page-level transition rules on cards */
+  transition:
+    opacity .75s var(--ease-spring) var(--d),
+    translate .75s var(--ease-spring) var(--d),
+    scale .75s var(--ease-spring) var(--d),
+    transform .25s ease, box-shadow .25s ease;
+}
+.reveal.is-visible { opacity: 1; translate: 0 0; scale: 1; }
+
+/* Badges and number seals pop in just after their card */
+.reveal .path-item__badge, .reveal .ms-card__badge, .reveal .rh-card__badge, .reveal .cs-item__num {
+  opacity: 0; scale: .55;
+  transition: opacity .5s ease calc(var(--d) + 220ms), scale .8s var(--ease-pop) calc(var(--d) + 220ms), transform .3s var(--ease-spring);
+}
+.reveal.is-visible .path-item__badge, .reveal.is-visible .ms-card__badge,
+.reveal.is-visible .rh-card__badge, .reveal.is-visible .cs-item__num { opacity: 1; scale: 1; }
+
+/* Roadmap connector line is drawn as the page scrolls (--draw: 0 → 1, set by Shared.initDrawLines) */
+.path::before, .cs-grid::before { clip-path: inset(0 0 calc((1 - var(--draw, 1)) * 100%) 0); transition: clip-path .25s linear; }
+
+/* Hero entrances (pages attach these with `animation:`) */
+@keyframes rise { from { opacity: 0; transform: translateY(36px) scale(.96); } }
+@keyframes art-in { from { opacity: 0; transform: translateY(36px) scale(1.04); filter: blur(8px); } }
+@keyframes reveal-media { from { clip-path: inset(0 0 0 100%); opacity: 0; } to { clip-path: inset(0); opacity: 1; } }
+@keyframes settle { from { transform: scale(1.04); } to { transform: scale(1); } }
+
+/* Hover lift with a soft shadow */
+.btn--primary:hover { box-shadow: 0 16px 32px rgba(10, 92, 255, .32); }
+.btn--outline:hover { box-shadow: 0 10px 24px rgba(11, 27, 77, .1); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal .path-item__badge, .reveal .ms-card__badge, .reveal .rh-card__badge, .reveal .cs-item__num { opacity: 1; translate: none; scale: none; transition: none; }
+  .path::before, .cs-grid::before { clip-path: none; transition: none; }
+}
+
+@media (max-width: 760px) {
+  .university-logo { height: 40px; }
+  .brand__title { font-size: 1.15rem; }
+  .brand__tagline { letter-spacing: 0.25em; }
+  .footer-strip__inner { grid-template-columns: 1fr; }
+}
+
+/* Small phones (≤ 480px, e.g. 320 × 768) */
+@media (max-width: 480px) {
+  :root { --header-h: 68px; }
+  .container { width: calc(100% - 32px); }
+  .section { padding: 48px 0; }
+  .site-header__inner { gap: 10px; }
+  .brand__title { font-size: 0.95rem; line-height: 1.15; }
+  .brand__tagline { font-size: 0.6875rem; letter-spacing: 0.12em; margin-top: 3px; white-space: nowrap; }
+  .university-logo { height: 30px; }
+  .eyebrow { font-size: 0.6875rem; letter-spacing: 0.16em; }
+  .heading { font-size: 1.75rem; }
+  .lead { font-size: 0.98rem; }
+  .btn { padding: 15px 22px; justify-content: center; }
+}

@@ -1,0 +1,99 @@
+/* ==========================================================
+   RedHat.css — styles specific to the Oracle page
+   Sections: 1 Hero · 2 Service chips · 3 Learning path · 4 CTA
+   ========================================================== */
+
+/* Page accent: Red Hat red replaces the shared blue */
+.rh-hero .heading em, .courses .heading em { color: #cc0000; }
+.rh-hero .btn--primary, .courses__cta .btn--primary { background: linear-gradient(135deg, #e00000, #a30000); border-color: #a30000; box-shadow: 0 10px 24px rgba(204, 0, 0, .3); }
+.rh-hero .btn--outline { color: #a30000; border-color: #cc0000; }
+.rh-hero .btn--outline:hover { background: #fdeaea; }
+.courses .eyebrow { color: #cc0000; }
+.rh-hero { background: linear-gradient(180deg, #fff5f5, #fff); }
+
+/* 1. Hero (the service chips are part of the hero photo) */
+.rh-hero { background: linear-gradient(180deg, #f6f9ff, #fff); overflow: hidden; }
+.rh-hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 40px; padding: 56px 0 48px; }
+.rh-hero__content { display: grid; gap: 20px; justify-items: start; }
+.rh-hero__logo { height: 64px; width: auto; }
+.rh-hero__actions { display: flex; flex-wrap: wrap; gap: 16px; }
+.rh-hero__visual { position: relative; display: grid; place-items: center; animation: art-in .8s var(--ease-spring) both .1s; }
+.hero-art { width: 100%; max-width: 560px; height: auto; animation: float 7s ease-in-out infinite; mix-blend-mode: multiply; }
+.glow { position: absolute; width: 70%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(238, 0, 0, .22), rgba(27, 42, 65, .1) 55%, transparent 70%); animation: pulse 4.5s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-14px); } }
+@keyframes pulse { 50% { transform: scale(1.18); opacity: .6; } }
+.rh-hero__content > * { animation: rise .8s var(--ease-spring) both; }
+.rh-hero__content > :nth-child(2) { animation-delay: .1s; }
+.rh-hero__content > :nth-child(3) { animation-delay: .18s; }
+.rh-hero__content > :nth-child(4) { animation-delay: .26s; }
+.rh-hero__content > :nth-child(5) { animation-delay: .34s; }
+@media (prefers-reduced-motion: reduce) { .rh-hero__visual, .hero-art, .glow, .rh-hero__content > * { animation: none; } }
+
+/* 3. Learning path — two columns around a centre rail of badges */
+.courses .lead { margin-top: 16px; }
+.path { list-style: none; margin: 56px 0 0; padding: 0; position: relative; display: grid; gap: 28px; }
+.path::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dashed #ecc3c3; transform: translateX(-50%); }
+.path-item { display: grid; grid-template-columns: 1fr 140px 1fr; align-items: center; }
+.path-item__card {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 24px 28px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--card-shadow); transition: transform .25s ease, box-shadow .25s ease;
+}
+.path-item__card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(11, 27, 77, .12); }
+.path-item__card h3 { color: var(--navy); font-size: 1.15rem; margin-bottom: 6px; }
+.path-item__card p { font-size: .9rem; }
+.path-item__icon { width: 52px; height: 52px; flex: none; color: var(--navy); }
+.path-item__badge { grid-column: 2; grid-row: 1; justify-self: center; }
+.path-item--left  .path-item__card { grid-column: 1; grid-row: 1; margin-right: 12px; }
+.path-item--right .path-item__card { grid-column: 3; grid-row: 1; margin-left: 12px; }
+
+/* Badge: round Oracle seal; ring alternates red / navy */
+.badge {
+  --ring: #cc0000;
+  position: relative; z-index: 1; width: 124px; height: 124px; border-radius: 50%;
+  background: #fff; border: 7px solid var(--ring); display: grid; place-content: center; justify-items: center; text-align: center; gap: 4px;
+  box-shadow: 0 10px 26px rgba(11, 27, 77, .16), inset 0 0 0 3px #fff;
+  transition: transform .3s var(--ease-spring);
+}
+.path-item:hover .badge { transform: scale(1.07) rotate(-3deg); }
+.path-item:nth-child(even) .badge { --ring: #1b2a41; }
+.badge__hat { width: 34px; height: auto; }
+.badge__num { font-size: 1.6rem; font-weight: 800; line-height: 1; color: var(--navy); }
+.path-item__icon img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+
+/* 4. CTA */
+.courses__cta { display: flex; justify-content: center; margin-top: 56px; }
+
+@media (max-width: 900px) {
+  .rh-hero__inner { grid-template-columns: minmax(0, 1fr); }
+  .path::before { left: 62px; }
+  .path-item { grid-template-columns: 124px minmax(0, 1fr); gap: 14px; }
+  .path-item__icon { display: none; }
+  .path-item__badge { grid-column: 1; }
+  .path-item--left .path-item__card, .path-item--right .path-item__card { grid-column: 2; margin: 0; }
+}
+
+@media (max-width: 480px) {
+  .rh-hero__inner { padding: 32px 0; gap: 28px; }
+  .rh-hero__logo { height: 64px; }
+  .rh-hero__content .btn { width: 100%; }
+  /* Stack each course: badge on top, full-width card below */
+  .path { margin-top: 36px; gap: 36px; }
+  .path::before { display: none; }
+  .path-item { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .path-item__badge, .path-item--left .path-item__card, .path-item--right .path-item__card { grid-column: 1; }
+  .path-item__badge { grid-row: 1; justify-self: start; margin: 0 0 -26px 18px; position: relative; z-index: 2; }
+  .path-item--left .path-item__card, .path-item--right .path-item__card { grid-row: 2; padding: 40px 20px 22px; }
+  .path-item__card h3 { font-size: 1.05rem; }
+  .badge { width: 104px; height: 124px; padding: 12px 8px 22px; }
+  .courses__cta .btn { width: 100%; }
+}
+
+/* Card accent edge: red on the left column, navy on the right */
+.path-item__card { position: relative; }
+.path-item__card::before { content: ""; position: absolute; left: 0; top: 18%; bottom: 18%; width: 4px; border-radius: 0 4px 4px 0; background: var(--accent, #cc0000); }
+.path-item--right .path-item__card { --accent: #1b2a41; }
+@media (max-width: 480px) { .rh-hero__actions { width: 100%; flex-direction: column; } .rh-hero__actions .btn { width: 100%; } }
+
+/* Feature strip picks up the page accent */
+.feature__icon { background: #fdeaea; color: #cc0000; }
