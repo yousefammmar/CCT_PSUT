@@ -25,7 +25,7 @@
 
 /* 2. Reset */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; overflow-x: clip; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
@@ -40,7 +40,7 @@ h1, h2, h3, h4, p { margin: 0; }
 
 /* 3. Layout */
 .container { width: min(var(--max-w), 100% - 40px); margin-inline: auto; }
-.section { padding: 72px 0; scroll-margin-top: var(--header-h); }
+.section { padding: 72px 0; scroll-margin-top: var(--header-h); overflow-x: clip; }
 
 /* 4. Header */
 .site-header {
@@ -66,7 +66,13 @@ h1, h2, h3, h4, p { margin: 0; }
   transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn:focus-visible, .provider-card__arrow:focus-visible, .brand:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+/* Focus ring in the shadcn style: a soft 3px halo instead of a hard outline */
+.btn:focus-visible, .provider-card__arrow:focus-visible, .brand:focus-visible, .feature a:focus-visible {
+  outline: none; box-shadow: 0 0 0 3px rgba(10, 92, 255, .4); border-color: var(--blue);
+}
+.brand:focus-visible { border-radius: 8px; }
 ::selection { background: var(--blue); color: #fff; }
 .btn--primary { background: linear-gradient(135deg, #0a5cff, #0646c8); color: #fff; box-shadow: 0 10px 24px rgba(10, 92, 255, .3); }
 .btn--outline { background: #fff; color: var(--blue); }
