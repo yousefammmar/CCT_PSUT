@@ -21,6 +21,22 @@ const Shared = (() => {
     });
   }
 
+  /** Section headings (label, title, intro) rise in together, ~90 ms apart, like the cards below them. */
+  function markSectionHeads() {
+    document.querySelectorAll(".section > .container > :is(.eyebrow, .heading, .lead)").forEach((el) => el.classList.add("reveal"));
+  }
+
+  /** A soft shadow fades in under the sticky header once the page has scrolled (a 1px sentinel at the top is observed, no scroll listener). */
+  function initHeaderShadow() {
+    const header = document.querySelector(".site-header");
+    if (!header || !("IntersectionObserver" in window)) return;
+    const sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText = "position:absolute;top:0;left:0;width:1px;height:8px;pointer-events:none";
+    document.body.prepend(sentinel);
+    new IntersectionObserver(([entry]) => header.classList.toggle("is-scrolled", !entry.isIntersecting)).observe(sentinel);
+  }
+
   /** Alternate course cards between sliding in from the left and the right. */
   function assignDirections() {
     document.querySelectorAll(".path > li, .ms-grid > li, .rh-grid > li, .cs-grid > li").forEach((li, i) => {
@@ -30,6 +46,7 @@ const Shared = (() => {
 
   /** Reveal .reveal elements as they enter the viewport; items entering together are staggered ~90 ms apart. */
   function initReveal() {
+    markSectionHeads();
     assignDirections();
     const items = document.querySelectorAll(".reveal:not(.is-visible)");
     if (!("IntersectionObserver" in window)) {
@@ -46,45 +63,22 @@ const Shared = (() => {
     items.forEach((i) => io.observe(i));
   }
 
-  /** Draw the roadmap connector as the reader scrolls: sets --draw (0–1) on .path / .cs-grid. */
-  function initDrawLines() {
-    const lines = document.querySelectorAll(".path, .cs-grid");
-    if (!lines.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      lines.forEach((el) => {
-        const r = el.getBoundingClientRect();
-        const reach = window.innerHeight * 0.75;
-        const p = Math.min(1, Math.max(0, (reach - r.top) / r.height));
-        el.style.setProperty("--draw", p.toFixed(3));
-      });
-    };
-    const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
-    window.addEventListener("scroll", request, { passive: true });
-    window.addEventListener("resize", request);
-    update();
-  }
-
   /** Re-scan for .reveal elements added after load (e.g. rendered cards). */
   const refresh = initReveal;
 
-  /** Elements with data-tilt lean toward the pointer (sets --rx / --ry in degrees). */
+  /** Elements with data-tilt lean toward the pointer (sets a perspective rotate directly on the element). */
   function initTilt() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!window.matchMedia("(hover: hover)").matches) return;
     document.querySelectorAll("[data-tilt]").forEach((el) => {
+      const lean = (rx, ry) => { el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`; };
       el.addEventListener("pointermove", (e) => {
         const r = el.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.setProperty("--ry", `${(x * 8).toFixed(2)}deg`);
-        el.style.setProperty("--rx", `${(-y * 8).toFixed(2)}deg`);
+        lean((-y * 8).toFixed(2), (x * 8).toFixed(2));
       });
-      el.addEventListener("pointerleave", () => {
-        el.style.setProperty("--rx", "0deg");
-        el.style.setProperty("--ry", "0deg");
-      });
+      el.addEventListener("pointerleave", () => lean(0, 0));
     });
   }
 
@@ -133,13 +127,13 @@ const Shared = (() => {
       { icon: "bag",   title: "Advance Your Career",       text: "Gain in-demand skills for new opportunities" },
     ];
     el.innerHTML = items.map((f) => `
-      <li class="feature">
+      <li class="feature reveal">
         <div class="feature__icon">${FEATURE_ICONS[f.icon]}</div>
         <div><strong>${f.title}</strong><span>${f.text}</span></div>
       </li>`).join("");
   }
 
-  function init() { renderNav(); initScrollButtons(); initReveal(); initDrawLines(); initTilt(); }
+  function init() { renderNav(); initScrollButtons(); initReveal(); initHeaderShadow(); initTilt(); }
 
   return { renderNav, renderFeatureStrip, scrollToSection, initScrollButtons, initReveal, initTilt, refresh, init };
 })();

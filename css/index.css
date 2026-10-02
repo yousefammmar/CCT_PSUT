@@ -32,12 +32,13 @@
   grid-column: span 2; position: relative; display: flex; flex-direction: column; gap: 6px;
   min-height: 250px; padding: 28px 28px 76px; background: #fff; border: 1px solid var(--line);
   border-radius: var(--radius); box-shadow: var(--card-shadow);
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: transform 220ms var(--ease-out), box-shadow 220ms ease;
 }
 .provider-card:nth-child(n+4) { grid-column: span 3; min-height: 220px; }
 .provider-card[data-href] { cursor: pointer; }
+.provider-card[data-href]:active { transform: scale(.985); }
 .provider-card:focus-within { box-shadow: 0 0 0 3px rgba(10, 92, 255, .25), var(--card-shadow); }
-.provider-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(11, 27, 77, .12); }
+@media (hover: hover) and (pointer: fine) { .provider-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(11, 27, 77, .12); } }
 .provider-card__logo { height: 56px; margin-bottom: 14px; }
 .provider-card__logo img { height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: left center; }
 .provider-card h3 { color: var(--navy); font-size: 1.2rem; }
@@ -46,9 +47,11 @@
 .provider-card__arrow {
   position: absolute; right: 18px; bottom: 18px; width: 44px; height: 44px;
   border-radius: 50%; background: var(--blue-soft); color: var(--navy);
-  display: grid; place-items: center; font-size: 1.1rem; transition: background .2s, color .2s, transform .2s;
+  display: grid; place-items: center; font-size: 1.1rem; transition: background-color 200ms ease, color 200ms ease, transform 160ms var(--ease-out);
 }
-.provider-card__arrow:hover, .provider-card__arrow:focus-visible { background: var(--blue); color: #fff; transform: translateX(3px); }
+.provider-card__arrow:focus-visible { background: var(--blue); color: #fff; }
+@media (hover: hover) and (pointer: fine) { .provider-card:hover .provider-card__arrow, .provider-card__arrow:hover { background: var(--blue); color: #fff; transform: translateX(3px); } }
+.provider-card__arrow:active { transform: scale(.94); }
 
 @media (max-width: 900px) {
   .hero__inner { grid-template-columns: minmax(0, 1fr); padding-top: 40px; }
