@@ -16,7 +16,7 @@
   --bg: #ffffff;
   --card-shadow: 0 8px 28px rgba(11, 27, 77, 0.07);
   --radius: 20px;
-  --header-h: 84px;
+  --header-h: 136px;
   --max-w: 1180px;
   /* motion */
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
@@ -62,6 +62,17 @@ main:focus { outline: none; }
 .brand__title { font-size: 1.5rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; line-height: 1.1; }
 .brand__tagline { font-size: 0.7rem; letter-spacing: 0.4em; color: #5a6585; margin-top: 6px; }
 .university-logo { height: 60px; width: auto; flex: none; }
+
+/* 4b. Navigation row */
+.site-nav { border-top: 1px solid var(--line); background: rgba(255, 255, 255, .96); }
+.site-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 52px; }
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; }
+.site-nav ul::-webkit-scrollbar { display: none; }
+.site-nav li { flex: none; scroll-snap-align: start; }
+.site-nav ul a { display: block; padding: 9px 16px; border-radius: 999px; font-size: .9rem; font-weight: 600; color: var(--navy); transition: background .2s ease, color .2s ease; }
+.site-nav ul a:hover { background: var(--blue-soft); }
+.site-nav ul a[aria-current="page"] { background: var(--blue); color: #fff; }
+.site-nav a:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(10, 92, 255, .4); }
 
 /* 5. Buttons */
 .btn {
@@ -163,7 +174,9 @@ main:focus { outline: none; }
 
 /* Small phones (≤ 480px, e.g. 320 × 768) */
 @media (max-width: 480px) {
-  :root { --header-h: 68px; }
+  :root { --header-h: 116px; }
+  .site-nav__inner { height: 48px; gap: 10px; }
+  .site-nav ul a { padding: 8px 12px; font-size: .85rem; }
   .container { width: calc(100% - 32px); }
   .section { padding: 48px 0; }
   .site-header__inner { gap: 10px; }
