@@ -48,11 +48,11 @@
 .badge-art { width: 100%; height: 100%; object-fit: contain; }
 
 /* Colour themes (white text kept ≥ 4.5:1 against the darker end of each gradient) */
-.ms-card--teal   { --c1: #0a6f86; --c2: #139bb0; }
-.ms-card--blue   { --c1: #0b4fb3; --c2: #1f7fe0; }
+.ms-card--teal   { --c1: #0a6f86; --c2: #0f7f93; }
+.ms-card--blue   { --c1: #0b4fb3; --c2: #1a6fcf; }
 .ms-card--purple { --c1: #5b2aa8; --c2: #8a43d4; }
-.ms-card--orange { --c1: #b8400a; --c2: #d9600f; }
-.ms-card--green  { --c1: #17703a; --c2: #2a9a4f; }
+.ms-card--orange { --c1: #a8380a; --c2: #c4520b; }
+.ms-card--green  { --c1: #17703a; --c2: #1f8043; }
 
 /* 3. CTA */
 .courses__cta { display: flex; justify-content: center; margin-top: 40px; }

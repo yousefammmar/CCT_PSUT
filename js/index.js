@@ -47,7 +47,7 @@ function renderHighlights() {
 function renderProviders() {
   document.getElementById("providers-grid").innerHTML = PROVIDERS.map((p) => `
     <article class="provider-card reveal" id="provider-${p.id}">
-      <div class="provider-card__logo"><img src="assets/images/${p.logo}" alt="${p.name} logo"></div>
+      <div class="provider-card__logo"><img src="assets/images/${p.logo}" alt=""></div>
       <h3>${p.name}</h3>
       <h4>${p.field}</h4>
       <p>${p.text}</p>
