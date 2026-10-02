@@ -44,7 +44,7 @@
 .provider-card h4 { font-weight: 500; font-size: 1.05rem; color: #55608a; }
 .provider-card p { font-size: 0.92rem; max-width: 34ch; margin-top: 4px; }
 .provider-card__arrow {
-  position: absolute; right: 22px; bottom: 22px; width: 40px; height: 40px;
+  position: absolute; right: 18px; bottom: 18px; width: 44px; height: 44px;
   border-radius: 50%; background: var(--blue-soft); color: var(--navy);
   display: grid; place-items: center; font-size: 1.1rem; transition: background .2s, color .2s, transform .2s;
 }

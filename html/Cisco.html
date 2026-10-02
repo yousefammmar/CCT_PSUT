@@ -8,8 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/Shared_Style.css">
   <link rel="stylesheet" href="../css/Cisco.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- ===== Header (logo links back home) ===== -->
   <header class="site-header">
@@ -22,6 +24,7 @@
     </div>
   </header>
 
+  <main id="main" tabindex="-1">
   <!-- ===== Hero ===== -->
   <section class="cs-hero" id="hero">
     <div class="container cs-hero__inner">
@@ -32,7 +35,7 @@
         <p class="lead">Our Cisco training helps learners build practical skills, prepare for industry-recognized certifications, improve career opportunities, and gain hands-on experience with real-world technologies and tools.</p>
         <div class="cs-hero__actions">
           <button class="btn btn--primary" data-scroll-target="#courses">Explore Cisco Courses <span aria-hidden="true">→</span></button>
-          <a class="btn btn--outline" href="https://www.netacad.com" target="_blank" rel="noopener noreferrer">Visit Cisco Academy <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--outline" href="https://www.netacad.com" target="_blank" rel="noopener noreferrer">Visit Cisco Academy <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
         </div>
       </div>
       <div class="cs-hero__visual" data-tilt>
@@ -48,13 +51,15 @@
       <div class="eyebrow">Your Cisco learning journey</div>
       <h2 class="heading">Build Your Skills <em>with Cisco</em></h2>
       <p class="lead">Follow a structured learning path designed to take you from foundational concepts to advanced skills with hands-on training and real-world applications.</p>
-      <ol class="cs-grid" id="course-grid"></ol>
-      <ul class="features" id="features"></ul>
+      <ol class="cs-grid" id="course-grid" aria-label="Course learning path"></ol>
+      <ul class="features" id="features" aria-label="Why train with us"></ul>
       <div class="courses__cta">
         <a class="btn btn--primary" id="enroll-btn" href="#">Enroll Now <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
+
+  </main>
 
   <script src="../js/Shared_Script.js"></script>
   <script src="../js/Cisco.js"></script>
