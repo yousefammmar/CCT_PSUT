@@ -63,10 +63,20 @@ function renderFooterStrip() {
     </div>`).join("");
 }
 
+/** The whole provider card opens its page, not only the small arrow (the arrow stays the keyboard target). */
+function makeCardsClickable() {
+  document.querySelectorAll(".provider-card").forEach((card) => {
+    const link = card.querySelector(".provider-card__arrow");
+    card.dataset.href = link.getAttribute("href");
+    card.addEventListener("click", (e) => { if (!e.target.closest("a")) window.location.href = card.dataset.href; });
+  });
+}
+
 /* 4. Init ------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   renderHighlights();
   renderProviders();
   renderFooterStrip();
+  makeCardsClickable();
   Shared.init(); // after rendering so .reveal items are observed
 });

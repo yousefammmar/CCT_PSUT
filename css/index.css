@@ -35,6 +35,8 @@
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .provider-card:nth-child(n+4) { grid-column: span 3; min-height: 220px; }
+.provider-card[data-href] { cursor: pointer; }
+.provider-card:focus-within { box-shadow: 0 0 0 3px rgba(10, 92, 255, .25), var(--card-shadow); }
 .provider-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(11, 27, 77, .12); }
 .provider-card__logo { height: 56px; margin-bottom: 14px; }
 .provider-card__logo img { height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: left center; }
