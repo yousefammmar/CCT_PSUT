@@ -63,20 +63,10 @@ function renderFooterStrip() {
     </div>`).join("");
 }
 
-function renderPetals(count = 14) {
-  const box = document.getElementById("petals");
-  if (!box) return;
-  box.innerHTML = Array.from({ length: count }, () => {
-    const s = 8 + Math.random() * 10;
-    return `<span class="petal" style="left:${(Math.random() * 100).toFixed(1)}%;--s:${s.toFixed(1)}px;--x:${(-60 + Math.random() * 120).toFixed(0)}px;--d:${(9 + Math.random() * 8).toFixed(1)}s;--delay:${(-Math.random() * 14).toFixed(1)}s"></span>`;
-  }).join("");
-}
-
 /* 4. Init ------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   renderHighlights();
   renderProviders();
   renderFooterStrip();
-  renderPetals();
   Shared.init(); // after rendering so .reveal items are observed
 });
