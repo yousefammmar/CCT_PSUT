@@ -88,6 +88,32 @@ const Shared = (() => {
     });
   }
 
+  /** Sticky second row under the header: Home + each provider. Links are resolved from the current folder. */
+  const NAV_PAGES = [
+    { label: "Home", file: "index.html", root: true },
+    { label: "AWS", file: "AWS.html" },
+    { label: "Oracle", file: "Oracle.html" },
+    { label: "Cisco", file: "Cisco.html" },
+    { label: "Microsoft", file: "Microsoft.html" },
+    { label: "Red Hat", file: "RedHat.html" },
+  ];
+
+  function renderNav() {
+    const header = document.querySelector(".site-header");
+    if (!header || header.querySelector(".site-nav")) return;
+    const inHtml = location.pathname.includes("/html/");
+    const href = (p) => (p.root ? (inHtml ? "../index.html" : "index.html") : (inHtml ? p.file : "html/" + p.file));
+    const current = decodeURIComponent(location.pathname.split("/").pop() || "index.html");
+    const items = NAV_PAGES.map((p) =>
+      `<li><a href="${href(p)}"${p.file === current ? ' aria-current="page"' : ""}>${p.label}</a></li>`).join("");
+    header.insertAdjacentHTML("beforeend", `
+      <nav class="site-nav" aria-label="Main">
+        <div class="container site-nav__inner">
+          <ul>${items}</ul>
+        </div>
+      </nav>`);
+  }
+
   /** Four-item "why train with us" strip. Fills <ul class="features" id="..."> for the given provider. */
   const FEATURE_ICON_ATTRS = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"';
   const FEATURE_ICONS = {
@@ -113,7 +139,7 @@ const Shared = (() => {
       </li>`).join("");
   }
 
-  function init() { initScrollButtons(); initReveal(); initDrawLines(); initTilt(); }
+  function init() { renderNav(); initScrollButtons(); initReveal(); initDrawLines(); initTilt(); }
 
-  return { renderFeatureStrip, scrollToSection, initScrollButtons, initReveal, initTilt, refresh, init };
+  return { renderNav, renderFeatureStrip, scrollToSection, initScrollButtons, initReveal, initTilt, refresh, init };
 })();
