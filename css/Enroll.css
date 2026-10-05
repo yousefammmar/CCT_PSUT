@@ -1,0 +1,70 @@
+/* ==========================================================
+   Enroll.css — styles for the registration steps pages
+   (Red Hat and Microsoft). The accent comes from body[data-provider].
+   Sections: 1 Accent · 2 Hero · 3 Steps · 4 Notes · 5 Contact · 6 Responsive
+   ========================================================== */
+
+/* 1. Accent */
+body[data-provider="redhat"]   { --accent: #cc0000; --accent-dark: #a30000; --accent-soft: #fdeaea; --accent-wash: #fff5f5; }
+body[data-provider="microsoft"] { --accent: #0a5cff; --accent-dark: #0646c8; --accent-soft: #eaf2ff; --accent-wash: #f1f7ff; }
+.enroll-hero .heading em { color: var(--accent); }
+.enroll-body .btn--primary { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); border-color: var(--accent-dark); box-shadow: 0 10px 24px color-mix(in srgb, var(--accent) 30%, transparent); }
+
+/* 2. Hero */
+.enroll-hero { background: linear-gradient(180deg, var(--accent-wash), #fff); }
+.enroll-hero__inner { display: grid; gap: 18px; justify-items: start; padding: 40px 0 28px; }
+.enroll-hero__logo { height: 56px; width: auto; }
+.back-link { font-size: .9rem; font-weight: 600; color: var(--accent-dark); padding: 6px 0; }
+.back-link:hover { text-decoration: underline; }
+.back-link:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 40%, transparent); border-radius: 6px; }
+
+/* 3. Steps */
+.enroll-body { padding-top: 24px; }
+.enroll-body__inner { max-width: 860px; display: grid; gap: 28px; }
+.reg-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; position: relative; }
+.step { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 18px; align-items: start; }
+.step__num { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; font-weight: 800; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 28%, transparent); }
+.step__card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--card-shadow); padding: 26px 28px; display: grid; gap: 14px; }
+.step__card h2 { color: var(--navy); font-size: 1.3rem; line-height: 1.25; text-wrap: balance; }
+.step__card p { max-width: 62ch; }
+.step__list { margin: 0; padding: 0; display: grid; gap: 12px; }
+.step__list li { position: relative; padding-left: 34px; }
+.step__list--check { list-style: none; }
+.step__list--check li::before { content: ""; position: absolute; left: 0; top: .2em; width: 20px; height: 20px; border-radius: 50%; background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m5.500 10.500 3 3 6-6.500' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; }
+.step__list--number { list-style: none; counter-reset: item; }
+.step__list--number li { counter-increment: item; }
+.step__list--number li::before { content: counter(item); position: absolute; left: 0; top: .1em; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: .78rem; font-weight: 700; color: var(--accent-dark); background: var(--accent-soft); }
+.step__list li.is-important { padding: 12px 14px 12px 44px; margin-left: -10px; border-radius: 12px; background: #fff8e6; color: #5c3d00; font-weight: 600; }
+.step__list li.is-important::before { left: 10px; top: 12px; background: #f5b400; color: #3a2600; }
+.inline-link { color: var(--accent-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.inline-link:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 40%, transparent); border-radius: 4px; }
+.step__action { display: grid; gap: 10px; justify-items: start; }
+.step__soon { font-size: .85rem; color: #5a6585; }
+
+/* 4. Notes */
+.reg-notes { padding: 24px 28px; border-radius: var(--radius); background: var(--accent-wash); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); display: grid; gap: 12px; }
+.reg-notes[hidden] { display: none; }
+.reg-notes h2 { color: var(--navy); font-size: 1.15rem; }
+.reg-notes ul { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
+
+/* Notes placed inside a step card sit a little tighter so the text keeps its width */
+.step__card .reg-notes { padding: 18px 20px; margin-top: 4px; }
+
+/* 5. Contact */
+.reg-contact { padding: 24px 28px; border-radius: var(--radius); background: linear-gradient(160deg, #0b1b4d, #123a9c); color: #fff; display: grid; gap: 8px; justify-items: start; }
+.reg-contact h2 { font-size: 1.15rem; }
+.reg-contact p { color: #dbe6ff; }
+.contact__mail { font-size: 1.1rem; font-weight: 700; color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.contact__mail:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255, 255, 255, .5); border-radius: 4px; }
+
+/* 6. Responsive */
+@media (max-width: 560px) {
+  .step__card .reg-notes { padding: 16px 14px; }
+  .step__card .reg-notes ul { padding-left: 16px; }
+  .step { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .step__num { width: 44px; height: 44px; font-size: 1.15rem; margin: 0 0 -14px 18px; position: relative; z-index: 1; }
+  .step__card { padding: 30px 20px 22px; }
+  .enroll-body .btn--primary { width: 100%; }
+  .step__action { justify-items: stretch; }
+  .enroll-hero__logo { height: 44px; }
+}

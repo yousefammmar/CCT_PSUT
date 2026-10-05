@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex">
+  <title>Red Hat Registration Steps | PSUT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/Shared_Style.css">
+  <link rel="stylesheet" href="../css/Enroll.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body data-provider="redhat">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== Header (nav row is added by Shared.renderNav) ===== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="Back to home">
+        <div class="brand__title">Center of Consultation and Training</div>
+        <div class="brand__tagline">LEARN · CERTIFY · GROW</div>
+      </a>
+      <img class="university-logo" src="../assets/images/psut-logo.webp" alt="Princess Sumaya University for Technology" width="1600" height="483">
+    </div>
+    <!-- NAV: the same links appear on every page. Edit a label here, and in each page, to rename it. -->
+    <nav class="site-nav" aria-label="Main">
+      <div class="container site-nav__inner">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="AWS.html">AWS</a></li>
+          <li><a href="Oracle.html">Oracle</a></li>
+          <li><a href="Cisco.html">Cisco</a></li>
+          <li><a href="Microsoft.html">Microsoft</a></li>
+          <li><a href="RedHat.html">Red Hat</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="enroll-hero" id="hero">
+      <div class="container enroll-hero__inner">
+        <a class="back-link" href="RedHat.html">&larr; Back to Red Hat courses</a>
+        <img class="enroll-hero__logo" src="../assets/images/redhat.svg" alt="Red Hat logo">
+        <h1 class="heading">Red Hat Courses <em>Registration Steps</em></h1>
+      </div>
+    </section>
+
+    <section class="section enroll-body">
+      <div class="container enroll-body__inner">
+        <ol class="reg-steps" aria-label="Registration steps">
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">1</span>
+            <div class="step__card">
+              <h2>Create a Red Hat Academy Account</h2>
+              <p>Please follow these steps to create your account:</p>
+              <ul class="step__list step__list--check">
+                <!-- TODO LINK (Red Hat Academy website): wrap "Red Hat Academy website" like this: <a class="inline-link" href="PASTE-LINK-HERE" target="_blank" rel="noopener noreferrer">Red Hat Academy website</a> -->
+                <li>Visit the Red Hat Academy website.</li>
+                <li>Click Login. You will be redirected to the registration page.</li>
+                <li>If you do not already have a Red Hat account, click Register for a Red Hat account.</li>
+                <li>Use your university email address.</li>
+                <li>Select Student as your job role.</li>
+                <li>Select Personal as your account type.</li>
+                <!-- TODO LINK (WhatsApp group): wrap "Join the WhatsApp group" like this: <a class="inline-link" href="PASTE-LINK-HERE" target="_blank" rel="noopener noreferrer">Join the WhatsApp group</a> -->
+                <li>Join the WhatsApp group to receive guidance and follow-up throughout the registration and training process.</li>
+              </ul>
+              <aside class="reg-notes reveal" aria-labelledby="notes-title">
+                <h2 id="notes-title">Important Notes</h2>
+                <ul>
+                  <li>In order to be able to register for the Red Hat System Administration II course you need to complete the Red Hat System Administration I first.</li>
+                  <li>You may initially see an “Unauthorized Account” message. This message will disappear once you are enrolled in the course.</li>
+                </ul>
+              </aside>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">2</span>
+            <div class="step__card">
+              <h2>Complete the Registration Form for Your Selected Course</h2>
+              <p>Please complete the registration form for each course you wish to join by clicking the link below:</p>
+              <div class="step__action">
+                <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeu_9EK68dhorJPpNSRzrQR8-0yI0UCVMFQJhdPOHBHSaTDIw/viewform?usp=header" target="_blank" rel="noopener noreferrer">Enroll Now <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </li>
+        </ol>
+        
+        <section class="reg-contact reveal" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact Us</h2>
+          <p>For inquiries regarding the courses, please contact:</p>
+          <a class="contact__mail" href="mailto:bayan@psut.edu.jo">bayan@psut.edu.jo</a>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/Shared_Script.js"></script>
+  <script src="../js/Enroll.js"></script>
+</body>
+</html>

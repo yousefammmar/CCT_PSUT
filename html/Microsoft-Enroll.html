@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex">
+  <title>Microsoft Registration Steps | PSUT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/Shared_Style.css">
+  <link rel="stylesheet" href="../css/Enroll.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body data-provider="microsoft">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== Header (nav row is added by Shared.renderNav) ===== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="Back to home">
+        <div class="brand__title">Center of Consultation and Training</div>
+        <div class="brand__tagline">LEARN · CERTIFY · GROW</div>
+      </a>
+      <img class="university-logo" src="../assets/images/psut-logo.webp" alt="Princess Sumaya University for Technology" width="1600" height="483">
+    </div>
+    <!-- NAV: the same links appear on every page. Edit a label here, and in each page, to rename it. -->
+    <nav class="site-nav" aria-label="Main">
+      <div class="container site-nav__inner">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="AWS.html">AWS</a></li>
+          <li><a href="Oracle.html">Oracle</a></li>
+          <li><a href="Cisco.html">Cisco</a></li>
+          <li><a href="Microsoft.html">Microsoft</a></li>
+          <li><a href="RedHat.html">Red Hat</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="enroll-hero" id="hero">
+      <div class="container enroll-hero__inner">
+        <a class="back-link" href="Microsoft.html">&larr; Back to Microsoft courses</a>
+        <img class="enroll-hero__logo" src="../assets/images/microsoft.svg" alt="Microsoft logo">
+        <h1 class="heading">Microsoft Courses <em>Registration Steps</em></h1>
+      </div>
+    </section>
+
+    <section class="section enroll-body">
+      <div class="container enroll-body__inner">
+        <ol class="reg-steps" aria-label="Registration steps">
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">1</span>
+            <div class="step__card">
+              <h2>Create a Microsoft Learn Account</h2>
+              <ol class="step__list step__list--number">
+                <!-- TODO LINK (Microsoft Learn registration link): wrap "registration link" like this: <a class="inline-link" href="PASTE-LINK-HERE" target="_blank" rel="noopener noreferrer">registration link</a> -->
+                <li>Go to the registration link.</li>
+                <li>Click “Change my email.”</li>
+                <li class="is-important">Very Important: You must create the account using your university email address ending in @std.psut.edu.jo.</li>
+                <li>Complete the required information and make sure all details are accurate, including your full name, email address, country, etc.</li>
+                <li>Accept the terms and conditions.</li>
+                <li>Confirm your registration and complete the activation process through the verification email sent to your university email address.</li>
+              </ol>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">2</span>
+            <div class="step__card">
+              <h2>Complete the Course Registration Form</h2>
+              <p>Complete the course registration form for the course you have selected.</p>
+              <div class="step__action">
+                <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSft5WWs4mTYBpjIFoRjni8itJaZDnLiOlUcFW97W4wNpOfDVA/viewform?usp=header" target="_blank" rel="noopener noreferrer">Enroll Now <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">3</span>
+            <div class="step__card">
+              <h2>Registration Confirmation</h2>
+              <p>The student will be contacted to confirm their enrollment in the selected course.</p>
+            </div>
+          </li>
+        </ol>
+        <section class="reg-contact reveal" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact Us</h2>
+          <p>For inquiries or assistance, please contact:</p>
+          <a class="contact__mail" href="mailto:bayan@psut.edu.jo">bayan@psut.edu.jo</a>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/Shared_Script.js"></script>
+  <script src="../js/Enroll.js"></script>
+</body>
+</html>

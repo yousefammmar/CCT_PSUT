@@ -24,6 +24,19 @@
       </a>
       <img class="university-logo" src="../assets/images/psut-logo.webp" alt="Princess Sumaya University for Technology" width="1600" height="483">
     </div>
+    <!-- NAV: the same links appear on every page. Edit a label here, and in each page, to rename it. -->
+    <nav class="site-nav" aria-label="Main">
+      <div class="container site-nav__inner">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="AWS.html">AWS</a></li>
+          <li><a href="Oracle.html">Oracle</a></li>
+          <li><a href="Cisco.html" aria-current="page">Cisco</a></li>
+          <li><a href="Microsoft.html">Microsoft</a></li>
+          <li><a href="RedHat.html">Red Hat</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <main id="main" tabindex="-1">
@@ -47,16 +60,167 @@
     </div>
   </section>
 
-  <!-- ===== Courses / learning path ===== -->
+  <!-- ===== Courses / learning path (edit the course text directly in the cards below) ===== -->
   <section class="section courses" id="courses">
     <div class="container">
       <div class="eyebrow">Your Cisco learning journey</div>
       <h2 class="heading">Build Your Skills <em>with Cisco</em></h2>
       <p class="lead">Follow a structured learning path designed to take you from foundational concepts to advanced skills with hands-on training and real-world applications.</p>
-      <ol class="cs-grid" id="course-grid" aria-label="Course learning path"></ol>
-      <ul class="features" id="features" aria-label="Why train with us"></ul>
+      <ol class="cs-grid" aria-label="Course learning path">
+        <!-- 1. Data Science Essentials with Python -->
+        <li class="cs-item cs-item--left reveal">
+          <span class="cs-item__num" aria-hidden="true">01</span>
+          <article class="cs-item__card">
+            <div>
+              <h3>Data Science Essentials with Python</h3>
+              <p>Learn Python for data analysis using Pandas and Matplotlib, with hands-on, project-based activities.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/01.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 2. Cybersecurity Essentials -->
+        <li class="cs-item cs-item--right reveal">
+          <article class="cs-item__card">
+            <div>
+              <h3>Cybersecurity Essentials</h3>
+              <p>Build foundational cybersecurity knowledge covering threats, vulnerabilities, network security, data protection, risk, and incident response.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/02.png" alt="" loading="lazy">
+            </div>
+          </article>
+          <span class="cs-item__num" aria-hidden="true">02</span>
+        </li>
+        <!-- 3. Cyber Threat Management -->
+        <li class="cs-item cs-item--left reveal">
+          <span class="cs-item__num" aria-hidden="true">03</span>
+          <article class="cs-item__card">
+            <div>
+              <h3>Cyber Threat Management</h3>
+              <p>Develop skills in cybersecurity governance, threat intelligence, vulnerability assessment, risk management, and incident response.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/03.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 4. Network Support and Security -->
+        <li class="cs-item cs-item--right reveal">
+          <article class="cs-item__card">
+            <div>
+              <h3>Network Support and Security</h3>
+              <p>Develop network troubleshooting, help-desk, cybersecurity, and secure user-access skills for network support roles.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/04.png" alt="" loading="lazy">
+            </div>
+          </article>
+          <span class="cs-item__num" aria-hidden="true">04</span>
+        </li>
+        <!-- 5. Introduction to Cybersecurity -->
+        <li class="cs-item cs-item--left reveal">
+          <span class="cs-item__num" aria-hidden="true">05</span>
+          <article class="cs-item__card">
+            <div>
+              <h3>Introduction to Cybersecurity</h3>
+              <p>Explore the fundamentals of cybersecurity, cyber threats, vulnerabilities, data protection, privacy, and security careers.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/05.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 6. Networking Basics -->
+        <li class="cs-item cs-item--right reveal">
+          <article class="cs-item__card">
+            <div>
+              <h3>Networking Basics</h3>
+              <p>Learn fundamental networking concepts, devices, media, protocols, IP addressing, and basic network configuration.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/06.png" alt="" loading="lazy">
+            </div>
+          </article>
+          <span class="cs-item__num" aria-hidden="true">06</span>
+        </li>
+        <!-- 7. C++ Essentials 1 -->
+        <li class="cs-item cs-item--left reveal">
+          <span class="cs-item__num" aria-hidden="true">07</span>
+          <article class="cs-item__card">
+            <div>
+              <h3>C++ Essentials 1</h3>
+              <p>Build foundational C++ programming skills, including core programming concepts, syntax, data types, and control structures.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/07.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 8. C Essentials 1 -->
+        <li class="cs-item cs-item--right reveal">
+          <article class="cs-item__card">
+            <div>
+              <h3>C Essentials 1</h3>
+              <p>Learn the fundamentals of the C programming language, including syntax, data types, variables, and flow control.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/08.png" alt="" loading="lazy">
+            </div>
+          </article>
+          <span class="cs-item__num" aria-hidden="true">08</span>
+        </li>
+        <!-- 9. English for IT 1 -->
+        <li class="cs-item cs-item--left reveal">
+          <span class="cs-item__num" aria-hidden="true">09</span>
+          <article class="cs-item__card">
+            <div>
+              <h3>English for IT 1</h3>
+              <p>Develop English communication skills for IT, including technical vocabulary, grammar, workplace communication, and professional scenarios.</p>
+            </div>
+            <div class="cs-item__icon">
+              <img src="../assets/images/icons/cisco/09.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+      </ol>
+      <ul class="features" aria-label="Why train with us">
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.500V16c0 1.500 2.700 3 6 3s6-1.500 6-3v-4.500M22 9v6"/></svg>
+          </div>
+          <div>
+            <strong>Hands-On Learning</strong><span>Practical labs and real-world scenarios</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="2"/><path d="M8 8h8M8 11.500h5"/><circle cx="16" cy="17" r="2.500"/><path d="m14.500 19.500-.5 2.500 2-1 2 1-.5-2.500"/></svg>
+          </div>
+          <div>
+            <strong>Expert Instructors</strong><span>Learn from certified Cisco professionals</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-6M12 20V6M19 20v-10"/></svg>
+          </div>
+          <div>
+            <strong>Certification Preparation</strong><span>Build the skills needed for Cisco certifications</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+          </div>
+          <div>
+            <strong>Advance Your Career</strong><span>Gain in-demand skills for new opportunities</span>
+          </div>
+        </li>
+      </ul>
       <div class="courses__cta">
-        <a class="btn btn--primary" id="enroll-btn" href="#">Enroll Now <span aria-hidden="true">→</span></a>
+        <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScpImP1l7mPWln0NwT92ot1ekxhfHqXWFc35qNZ9cjO_2Pz7Q/viewform?usp=header" target="_blank" rel="noopener noreferrer">Enroll Now <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </div>
     </div>
   </section>

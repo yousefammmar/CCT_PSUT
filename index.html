@@ -24,6 +24,19 @@
       </div>
       <img class="university-logo" src="assets/images/psut-logo.webp" alt="Princess Sumaya University for Technology" width="1600" height="483">
     </div>
+    <!-- NAV: the same links appear on every page. Edit a label here, and in each page, to rename it. -->
+    <nav class="site-nav" aria-label="Main">
+      <div class="container site-nav__inner">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="html/AWS.html">AWS</a></li>
+          <li><a href="html/Oracle.html">Oracle</a></li>
+          <li><a href="html/Cisco.html">Cisco</a></li>
+          <li><a href="html/Microsoft.html">Microsoft</a></li>
+          <li><a href="html/RedHat.html">Red Hat</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <main id="main" tabindex="-1">
@@ -46,7 +59,26 @@
 
   <!-- ===== Highlights ===== -->
   <section class="highlights" id="highlights">
-    <div class="container highlights__inner" id="highlights-list"></div>
+    <div class="container highlights__inner">
+      <div class="highlight reveal">
+        <div class="highlight__icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-6 9.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.8l-6 3.3-6-3.3z"/></svg>
+        </div>
+        <span>Globally Recognized Certifications</span>
+      </div>
+      <div class="highlight reveal">
+        <div class="highlight__icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="3.2"/><circle cx="5" cy="9.5" r="2.4"/><circle cx="19" cy="9.5" r="2.4"/><path d="M12 13c-3.3 0-6 1.8-6 4v2h12v-2c0-2.2-2.7-4-6-4zM5 13c-2.3 0-4 1.2-4 3v2h3.5v-1.5c0-1.4.6-2.6 1.6-3.5H5zm14 0h-.1c1 .9 1.6 2.100 1.600 3.500V18H24v-2c0-1.800-1.700-3-4-3z"/></svg>
+        </div>
+        <span>Expert Training and Support</span>
+      </div>
+      <div class="highlight reveal">
+        <div class="highlight__icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="13" width="4" height="8" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+        </div>
+        <span>Skills for a Brighter Future</span>
+      </div>
+    </div>
   </section>
 
   <!-- ===== Providers ===== -->
@@ -55,7 +87,53 @@
       <div class="eyebrow">Partnering for a brighter tomorrow</div>
       <h2 class="heading">Professional <em>Certificate Providers</em></h2>
       <p class="lead">Gain in-demand skills with industry-leading certifications through our trusted global partners. Our programs are designed to help you advance your career and stay ahead in a rapidly evolving world.</p>
-      <div class="providers__grid" id="providers-grid"></div>
+      <div class="providers__grid">
+        <article class="provider-card reveal" id="provider-aws">
+          <div class="provider-card__logo">
+            <img src="assets/images/aws.svg" alt="">
+          </div>
+          <h3>AWS</h3>
+          <h4>Cloud Certifications</h4>
+          <p>Build in-demand cloud skills with Amazon Web Services certifications.</p>
+          <a class="provider-card__arrow" href="html/AWS.html" aria-label="Open the AWS courses page from AWS">→</a>
+        </article>
+        <article class="provider-card reveal" id="provider-oracle">
+          <div class="provider-card__logo">
+            <img src="assets/images/oracle.svg" alt="">
+          </div>
+          <h3>Oracle</h3>
+          <h4>Professional Certifications</h4>
+          <p>Develop expertise in database, cloud, and enterprise solutions with Oracle certifications.</p>
+          <a class="provider-card__arrow" href="html/Oracle.html" aria-label="Open the Oracle courses page from Oracle">→</a>
+        </article>
+        <article class="provider-card reveal" id="provider-cisco">
+          <div class="provider-card__logo">
+            <img src="assets/images/cisco.svg" alt="">
+          </div>
+          <h3>Cisco</h3>
+          <h4>Networking Certifications</h4>
+          <p>Gain industry-recognized skills in networking, security, and infrastructure with Cisco certifications.</p>
+          <a class="provider-card__arrow" href="html/Cisco.html" aria-label="Open the Cisco courses page from Cisco">→</a>
+        </article>
+        <article class="provider-card reveal" id="provider-microsoft">
+          <div class="provider-card__logo">
+            <img src="assets/images/microsoft.svg" alt="">
+          </div>
+          <h3>Microsoft</h3>
+          <h4>Role-Based Certifications</h4>
+          <p>Advance your career with certifications in cloud, data, productivity, and security.</p>
+          <a class="provider-card__arrow" href="html/Microsoft.html" aria-label="Open the Microsoft courses page from Microsoft">→</a>
+        </article>
+        <article class="provider-card reveal" id="provider-redhat">
+          <div class="provider-card__logo">
+            <img src="assets/images/redhat.svg" alt="">
+          </div>
+          <h3>Red Hat</h3>
+          <h4>Infrastructure Certifications</h4>
+          <p>Build expertise in open source technologies and enterprise infrastructure with Red Hat certifications.</p>
+          <a class="provider-card__arrow" href="html/RedHat.html" aria-label="Open the Red Hat courses page from Red Hat">→</a>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -63,7 +141,26 @@
 
   <!-- ===== Footer strip ===== -->
   <footer class="footer-strip">
-    <div class="container footer-strip__inner" id="footer-strip"></div>
+    <div class="container footer-strip__inner">
+      <div class="footer-strip__item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="9" r="6"/><path d="M8 14 6 22l6-3 6 3-2-8a7.500 7.500 0 0 1-8 0z"/></svg>
+        <div>
+          <strong>Industry-Relevant Skills</strong><span>Certifications that make an impact</span>
+        </div>
+      </div>
+      <div class="footer-strip__item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="3.2"/><circle cx="5" cy="9.5" r="2.4"/><circle cx="19" cy="9.5" r="2.4"/><path d="M12 13c-3.3 0-6 1.8-6 4v2h12v-2c0-2.2-2.7-4-6-4zM5 13c-2.3 0-4 1.2-4 3v2h3.5v-1.5c0-1.4.6-2.6 1.6-3.5H5zm14 0h-.1c1 .9 1.6 2.100 1.600 3.500V18H24v-2c0-1.800-1.700-3-4-3z"/></svg>
+        <div>
+          <strong>Learn from Experts</strong><span>Hands-on training and guidance</span>
+        </div>
+      </div>
+      <div class="footer-strip__item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="13" width="4" height="8" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+        <div>
+          <strong>Advance Your Future</strong><span>More opportunities, greater success</span>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script src="js/Shared_Script.js"></script>

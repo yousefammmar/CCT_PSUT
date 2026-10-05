@@ -24,6 +24,19 @@
       </a>
       <img class="university-logo" src="../assets/images/psut-logo.webp" alt="Princess Sumaya University for Technology" width="1600" height="483">
     </div>
+    <!-- NAV: the same links appear on every page. Edit a label here, and in each page, to rename it. -->
+    <nav class="site-nav" aria-label="Main">
+      <div class="container site-nav__inner">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="AWS.html">AWS</a></li>
+          <li><a href="Oracle.html" aria-current="page">Oracle</a></li>
+          <li><a href="Cisco.html">Cisco</a></li>
+          <li><a href="Microsoft.html">Microsoft</a></li>
+          <li><a href="RedHat.html">Red Hat</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <main id="main" tabindex="-1">
@@ -44,16 +57,107 @@
     </div>
   </section>
 
-  <!-- ===== Courses / learning path ===== -->
+  <!-- ===== Courses / learning path (edit the course text directly in the cards below) ===== -->
   <section class="section courses" id="courses">
     <div class="container">
       <div class="eyebrow">Your Oracle learning journey</div>
       <h2 class="heading">Build Your Skills <em>with Oracle</em></h2>
       <p class="lead">Follow a structured learning path designed to take you from foundational concepts to advanced skills with hands-on training and real-world applications.</p>
-      <ol class="path" id="course-path" aria-label="Course learning path"></ol>
-      <ul class="features" id="features" aria-label="Why train with us"></ul>
+      <ol class="path" aria-label="Course learning path">
+        <!-- 1. Application Development Foundations – English -->
+        <li class="path-item path-item--left reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Oracle APEX badge">
+              <div class="badge__brand">ORACLE</div>
+              <div class="badge__label">APEX</div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17a4 4 0 0 1-.5-8A5.500 5.500 0 0 1 17 8.500 4.800 4.800 0 0 1 17 17"/><path d="m10 14-2 2 2 2M14 14l2 2-2 2M12.500 13.500l-1 5"/></svg>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Application Development Foundations – English</h3>
+              <p>Learn techniques and tools to develop database-driven web applications using no-code/low-code Oracle APEX on an Autonomous Database (Cloud).</p>
+            </div>
+            <div class="path-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17a4 4 0 0 1-.5-8A5.500 5.500 0 0 1 17 8.500 4.800 4.800 0 0 1 17 17"/><path d="m10 14-2 2 2 2M14 14l2 2-2 2M12.500 13.500l-1 5"/></svg>
+            </div>
+          </article>
+        </li>
+        <!-- 2. Artificial Intelligence with Machine Learning in Java – English -->
+        <li class="path-item path-item--right reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Oracle AI / ML badge">
+              <div class="badge__brand">ORACLE</div>
+              <div class="badge__label">AI / ML</div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3a4 4 0 0 0-4 4 3.500 3.500 0 0 0-1 6.500A3.500 3.500 0 0 0 8 19a3 3 0 0 0 4 1V4a3 3 0 0 0-3-1zM15 3a4 4 0 0 1 4 4 3.500 3.500 0 0 1 1 6.500A3.500 3.500 0 0 1 16 19a3 3 0 0 1-4 1"/><path d="M8 9h2M14 9h2M8 14h2M14 14h2"/></svg>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Artificial Intelligence with Machine Learning in Java – English</h3>
+              <p>Learn and practice machine learning concepts within artificial intelligence using Java, including terminology, syntax, and steps to create machine learning solutions.</p>
+            </div>
+            <div class="path-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3a4 4 0 0 0-4 4 3.500 3.500 0 0 0-1 6.500A3.500 3.500 0 0 0 8 19a3 3 0 0 0 4 1V4a3 3 0 0 0-3-1zM15 3a4 4 0 0 1 4 4 3.500 3.500 0 0 1 1 6.500A3.500 3.500 0 0 1 16 19a3 3 0 0 1-4 1"/><path d="M8 9h2M14 9h2M8 14h2M14 14h2"/></svg>
+            </div>
+          </article>
+        </li>
+        <!-- 3. Data Center Operations Foundations – English -->
+        <li class="path-item path-item--left reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Oracle Data Center badge">
+              <div class="badge__brand">ORACLE</div>
+              <div class="badge__label">Data Center</div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="5" rx="1.500"/><rect x="4" y="10" width="16" height="5" rx="1.500"/><rect x="4" y="17" width="16" height="4" rx="1.500"/><path d="M7 5.500h2M7 12.500h2M7 19h2"/></svg>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Data Center Operations Foundations – English</h3>
+              <p>Learn the fundamental concepts of data center operations and critical facilities management, including safety practices, electrical and HVAC systems, monitoring and alarm response, and standard operating procedures.</p>
+            </div>
+            <div class="path-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="5" rx="1.500"/><rect x="4" y="10" width="16" height="5" rx="1.500"/><rect x="4" y="17" width="16" height="4" rx="1.500"/><path d="M7 5.500h2M7 12.500h2M7 19h2"/></svg>
+            </div>
+          </article>
+        </li>
+      </ol>
+      <ul class="features" aria-label="Why train with us">
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.500V16c0 1.500 2.700 3 6 3s6-1.500 6-3v-4.500M22 9v6"/></svg>
+          </div>
+          <div>
+            <strong>Hands-On Learning</strong><span>Practical labs and real-world scenarios</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="2"/><path d="M8 8h8M8 11.500h5"/><circle cx="16" cy="17" r="2.500"/><path d="m14.500 19.500-.5 2.500 2-1 2 1-.5-2.500"/></svg>
+          </div>
+          <div>
+            <strong>Expert Instructors</strong><span>Learn from certified Oracle professionals</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-6M12 20V6M19 20v-10"/></svg>
+          </div>
+          <div>
+            <strong>Certification Preparation</strong><span>Build the skills needed for Oracle certifications</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+          </div>
+          <div>
+            <strong>Advance Your Career</strong><span>Gain in-demand skills for new opportunities</span>
+          </div>
+        </li>
+      </ul>
       <div class="courses__cta">
-        <a class="btn btn--primary" id="enroll-btn" href="#">Enroll Now <span aria-hidden="true">→</span></a>
+        <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScIqkI89SKseny6f8uCVNRC0wvmTfJe4xoF5T0Qit8qVPLbaw/viewform?usp=header" target="_blank" rel="noopener noreferrer">Enroll Now <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </div>
     </div>
   </section>

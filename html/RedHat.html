@@ -24,6 +24,19 @@
       </a>
       <img class="university-logo" src="../assets/images/psut-logo.webp" alt="Princess Sumaya University for Technology" width="1600" height="483">
     </div>
+    <!-- NAV: the same links appear on every page. Edit a label here, and in each page, to rename it. -->
+    <nav class="site-nav" aria-label="Main">
+      <div class="container site-nav__inner">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="AWS.html">AWS</a></li>
+          <li><a href="Oracle.html">Oracle</a></li>
+          <li><a href="Cisco.html">Cisco</a></li>
+          <li><a href="Microsoft.html">Microsoft</a></li>
+          <li><a href="RedHat.html" aria-current="page">Red Hat</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <main id="main" tabindex="-1">
@@ -44,16 +57,260 @@
     </div>
   </section>
 
-  <!-- ===== Courses / learning path ===== -->
+  <!-- ===== Courses / learning path (edit the course text directly in the cards below) ===== -->
   <section class="section courses" id="courses">
     <div class="container">
       <div class="eyebrow">Your Red Hat learning journey</div>
       <h2 class="heading">Build Your Skills <em>with Red Hat</em></h2>
       <p class="lead">Follow a structured learning path designed to take you from foundational concepts to advanced skills with hands-on training and real-world applications.</p>
-      <ol class="path" id="course-path" aria-label="Course learning path"></ol>
-      <ul class="features" id="features" aria-label="Why train with us"></ul>
+      <ol class="path" aria-label="Course learning path">
+        <!-- 1. Getting Started with Linux Fundamentals (RH104) -->
+        <li class="path-item path-item--left reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 01">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">01</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Getting Started with Linux Fundamentals (RH104)</h3>
+              <p>Introduces Linux concepts and basic Linux tools for beginners with little or no prior Linux experience.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/01.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 2. Red Hat System Administration I (RH124) -->
+        <li class="path-item path-item--right reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 02">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">02</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Red Hat System Administration I (RH124)</h3>
+              <p>Foundational Red Hat Enterprise Linux administration including CLI, files, users, services, networking, remote access, software management, and basic security.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/02.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 3. Red Hat System Administration II (RH134) -->
+        <li class="path-item path-item--left reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 03">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">03</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Red Hat System Administration II (RH134)</h3>
+              <p>Advanced Linux administration including installation, storage, file systems, SELinux, services, boot, troubleshooting, tuning, shell scripting, and containers.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/03.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 4. Red Hat System Administration III – Linux Automation (RH294) -->
+        <li class="path-item path-item--right reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 04">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">04</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Red Hat System Administration III – Linux Automation (RH294)</h3>
+              <p>Linux automation with Red Hat Ansible Automation Platform, inventories, playbooks, roles, and reusable automation.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/04.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 5. Red Hat Application Development I – Programming in Java EE (AD183) -->
+        <li class="path-item path-item--left reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 05">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">05</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Red Hat Application Development I – Programming in Java EE (AD183)</h3>
+              <p>Enterprise Java development including EJB, JPA, REST, CDI, messaging, and security.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/05.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 6. Red Hat OpenStack Administration I (CL110) -->
+        <li class="path-item path-item--right reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 06">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">06</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Red Hat OpenStack Administration I (CL110)</h3>
+              <p>Core operations for Red Hat OpenStack private cloud including projects, resources, privileges, networking, storage, monitoring, and troubleshooting.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/06.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 7. Introduction to OpenShift Applications (DO101) -->
+        <li class="path-item path-item--left reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 07">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">07</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Introduction to OpenShift Applications (DO101)</h3>
+              <p>Application deployment, scaling, and troubleshooting on OpenShift.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/07.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 8. Red Hat OpenShift Administration I: Containers & Kubernetes (DO180) -->
+        <li class="path-item path-item--right reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 08">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">08</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Red Hat OpenShift Administration I: Containers & Kubernetes (DO180)</h3>
+              <p>Deploy, manage, and troubleshoot containerized applications as Kubernetes workloads on OpenShift clusters.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/08.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 9. Red Hat OpenShift Development I – Introduction to Containers with Podman (DO188) -->
+        <li class="path-item path-item--left reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 09">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">09</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Red Hat OpenShift Development I – Introduction to Containers with Podman (DO188)</h3>
+              <p>Build, run, and manage containers using Podman and OpenShift, including images, networking, storage, and multi-container apps.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/09.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+        <!-- 10. Python Programming with Red Hat (AD141) -->
+        <li class="path-item path-item--right reveal">
+          <div class="path-item__badge">
+            <div class="badge" role="img" aria-label="Step 10">
+              <svg class="badge__hat" viewBox="0 0 64 40" aria-hidden="true">
+                <path fill="#cc0000" d="M6 30c0-6 6-8 12-9 2-8 6-14 12-14s9 6 11 12c6 2 11 5 11 11 0 3-6 6-23 6S6 33 6 30z"/>
+                <path fill="#151515" d="M18 21c3 3 10 4 23 3 3-.2 5-.6 7-1.200-2-1.500-5-2.500-8-3-6 2-14 2-22 1.200z"/>
+              </svg>
+              <div class="badge__num">10</div>
+            </div>
+          </div>
+          <article class="path-item__card">
+            <div>
+              <h3>Python Programming with Red Hat (AD141)</h3>
+              <p>Beginner Python programming covering syntax, control flow, functions, data structures, files, JSON, regular expressions, debugging, modules, and libraries.</p>
+            </div>
+            <div class="path-item__icon">
+              <img src="../assets/images/icons/redhat/10.png" alt="" loading="lazy">
+            </div>
+          </article>
+        </li>
+      </ol>
+      <ul class="features" aria-label="Why train with us">
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.500V16c0 1.500 2.700 3 6 3s6-1.500 6-3v-4.500M22 9v6"/></svg>
+          </div>
+          <div>
+            <strong>Hands-On Learning</strong><span>Practical labs and real-world scenarios</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="2"/><path d="M8 8h8M8 11.500h5"/><circle cx="16" cy="17" r="2.500"/><path d="m14.500 19.500-.5 2.500 2-1 2 1-.5-2.500"/></svg>
+          </div>
+          <div>
+            <strong>Expert Instructors</strong><span>Learn from certified Red Hat professionals</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-6M12 20V6M19 20v-10"/></svg>
+          </div>
+          <div>
+            <strong>Certification Preparation</strong><span>Build the skills needed for Red Hat certifications</span>
+          </div>
+        </li>
+        <li class="feature reveal">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+          </div>
+          <div>
+            <strong>Advance Your Career</strong><span>Gain in-demand skills for new opportunities</span>
+          </div>
+        </li>
+      </ul>
       <div class="courses__cta">
-        <a class="btn btn--primary" id="enroll-btn" href="#">Enroll Now <span aria-hidden="true">→</span></a>
+        <a class="btn btn--primary" href="RedHat-Enroll.html">Enroll Now <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
